@@ -558,7 +558,7 @@ The LU decomposition is especially useful when solving many different systems wi
 ````{div} exercise
 Let $A$ be a $m$ by $n$ matrix. Determine whether the statement is **True** or **False**.
 
-  * If $m > n$ and $\mathrm{rank}(A) = n$, then here is a unique solution of $A \boldsymbol{x} = \boldsymbol{b}$ for any $\boldsymbol{b}$.
+  * If $m > n$ and $\mathrm{rank}(A) = n$, then there is a unique solution of $A \boldsymbol{x} = \boldsymbol{b}$ for any $\boldsymbol{b}$.
   * If $m < n$ and $\mathrm{rank}(A) = m$, then there are infinitely many solutions of $A \boldsymbol{x} = \boldsymbol{b}$ for any $\boldsymbol{b}$.
   * If $m > n$ and $\mathrm{rank}(A) = n$, then if the system $A \boldsymbol{x} = \boldsymbol{b}$ has one solution then there is only one solution.
   * If $m > n$ and $\mathrm{rank}(A) < n$, then if the system $A \boldsymbol{x} = \boldsymbol{b}$ has one solution then there are infinitely many solutions.

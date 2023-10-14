@@ -264,6 +264,11 @@ Show that the $\infty$-norm satisfies the properties of a norm.
 
 ```{div} exercise
 Is the function $\| \boldsymbol{x} \| = x_1 + \cdots + x_n$ a vector norm? Explain.
+
+```{dropdown} Solution
+No
+```
+
 ```
 
 ```{div} exercise
@@ -282,10 +287,20 @@ $$
 
 ```{div} exercise
 Is it true that $\| \boldsymbol{x} \|_1 \leq \| \boldsymbol{x} \|_2 \leq \| \boldsymbol{x} \|_{\infty}$ for all $\boldsymbol{x} \in \mathbb{R}^n$? Explain.
+
+```{dropdown} Solution
+No
+```
+
 ```
 
 ```{div} exercise
 Determine whether the statement is **True** or **False**: If $\| A \| = 1$ then $A = I$.
+
+```{dropdown} Solution
+False
+```
+
 ```
 
 ```{div} exercise
@@ -294,4 +309,9 @@ Suppose $A$ is a 2 by 2 matrix such that the image of the unit circle under the 
 ![/img/01_02_02.png](/img/01_02_03.png)
 
 Determine $\mathrm{cond}(A)$.
+
+```{dropdown} Solution
+$\mathrm{cond}(A)  = 5/2$
+```
+
 ```

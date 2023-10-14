@@ -262,14 +262,14 @@ Show that the 1-norm satisfies the properties of a norm.
 Show that the $\infty$-norm satisfies the properties of a norm.
 ```
 
-```{div} exercise
+````{div} exercise
 Is the function $\| \boldsymbol{x} \| = x_1 + \cdots + x_n$ a vector norm? Explain.
 
 ```{dropdown} Solution
 No
 ```
 
-```
+````
 
 ```{div} exercise
 The function

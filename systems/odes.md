@@ -400,6 +400,11 @@ $$
 * The finite difference method applied to a linear second order differential equation with boundary conditions will compute exact values of the solution $y_k = y(t_k)$ if the step size $h$ is chosen to be small enough.
 * The finite difference method applied to a linear second order differential equation with boundary conditions  will never compute exact values of the solution $y_k = y(t_k)$ for any differential equation and step size $h$.
 
+```{dropdown} Solution
+* False
+* False
+```
+
 **Exercise 2.** Suppose we discretize the domain $[0,1]$ of a differential equation with boundary conditions
 
 $$
@@ -407,6 +412,10 @@ y'' + p(t)y' + q(t)y = r(t) \ \ , \ \ y(0) = \alpha \ \ , \ \ y(1) = \beta
 $$
 
 with step size $h=0.1$ and derive a linear system $A \boldsymbol{y} = \boldsymbol{b}$. How many unknown values $y_k$ are we solving for in this case?
+
+```{dropdown} Solution
+9
+```
 
 **Exercise 3.** Setup a linear system $A \boldsymbol{y} = \boldsymbol{b}$ to approximate the solution of the equation with boundary conditions
 
@@ -416,6 +425,21 @@ $$
 
 using step size $h=0.25$. Use the forward difference formula and the boundary condition $y'(0)=1$ to approximate the boundary value $y_0$.
 
+```{dropdown} Solution
+$$
+A =
+\begin{bmatrix}
+-2 & 1 & 0 \\
+1 & -2 & 1 \\
+0 & 1 & -2
+\end{bmatrix}
+\hspace{10mm}
+\boldsymbol{y} = \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}
+\hspace{10mm}
+\boldsymbol{b} = \begin{bmatrix} 2^{1/2} + 1 \\ 2^{3/4} \\ 2 \end{bmatrix}
+$$
+```
+
 **Exercise 4.** Derive the general form of the linear system $A \boldsymbol{y} = \boldsymbol{b}$ for an equation with boundary conditions
 
 $$
@@ -423,6 +447,30 @@ y'' + p(t)y' = r(t) \ \ , \ \ y(t_0) = \alpha \ \ , \ \ y(t_f) = \beta
 $$
 
 using the forward difference formula to approximate $y'$. Use the notation as in the examples: choose $N$, let  $h = (t_f - t_0)/(N+1)$ and $t_k = t_0 + kh$, let $y_k$ denote an approximation of $y(t_k)$ and note $y_0 = \alpha$ and $y_{N+1} = \beta$.
+
+```{dropdown} Solution
+$$
+A =
+\left[ \begin{array}{rrcrr}
+a_1 & b_1 & & & \\
+1 & a_2 & b_2 & & \\
+& & \ddots & & \\
+& & 1 & a_{N-1} & b_{N-1} \\
+& & & 1 & a_N
+\end{array} \right]
+\hspace{10mm}
+\boldsymbol{y} =
+\begin{bmatrix}
+y_1 \\ y_2 \\ \vdots \\ y_{N-1} \\ y_N
+\end{bmatrix}
+\hspace{10mm}
+\boldsymbol{b} =
+\begin{bmatrix}
+h^2 r_1 + \alpha \\ h^2 r_2 \\ \vdots \\ h^2 r_{N-1} \\ h^2 r_N - (h p_N + 1)\beta
+\end{bmatrix}
+$$
+where $a_k = -p_kh - 2$ and $b_k = p_kh + 1$
+```
 
 **Exercise 5.** Explain why it is not possible to derive a linear system $A \boldsymbol{y} = \boldsymbol{b}$ for the equation
 
@@ -440,6 +488,10 @@ $$
 
 with 5 equally spaced points from $t_0 = 0$ to $t_4 = 1$ and find $y_1 = -0.19554177$ and $y_3 = 0.35872678$. Determine $y_2$.
 
+```{dropdown} Solution
+$y_2 = -0.50664279
+```
+
 **Exercise 7.** Setup a linear system $A \boldsymbol{y} = \boldsymbol{b}$ for the finite difference approximation of
 
 $$
@@ -447,6 +499,29 @@ y'' + ty = 0 \ \ , \ \ y(1) = 1 \ \ , \ \ y(3) = -1
 $$
 
 using 5 equally spaced points from $t_0 = 1$ to $t_4 = 3$.
+
+```{dropdown} Solution
+$$
+A =
+\left[ \begin{array}{rrcrr}
+a_1 & 1 & 0 & 0 \\
+1 & a_2 & 1 & 0 \\
+0 & 1 & a_3 & 1 \\
+0 & 0 & 1 & a_4 \\
+\end{array} \right]
+\hspace{10mm}
+\boldsymbol{y} =
+\begin{bmatrix}
+y_1 \\ y_2 \\ y_3 \\ y_4
+\end{bmatrix}
+\hspace{10mm}
+\boldsymbol{b} =
+\begin{bmatrix}
+-1 \\ 0 \\ 0 \\ 1
+\end{bmatrix}
+$$
+where $a_k = -2 + t_k/4$
+```
 
 **Exercise 8.** Setup a linear system $A \boldsymbol{y} = \boldsymbol{b}$ for the finite difference approximation of
 
@@ -456,6 +531,29 @@ $$
 
 using 5 equally spaced points from $t_0 = 1$ to $t_4 = 3$. (Hint: use the backwards difference formula to approximate $y_4$.)
 
+```{dropdown} Solution
+$$
+A =
+\left[ \begin{array}{rrcrr}
+a_1 & 1 & 0 & 0 \\
+1 & a_2 & 1 & 0 \\
+0 & 1 & a_3 & 1 \\
+0 & 0 & 1 & a_4 \\
+\end{array} \right]
+\hspace{10mm}
+\boldsymbol{y} =
+\begin{bmatrix}
+y_1 \\ y_2 \\ y_3 \\ y_4
+\end{bmatrix}
+\hspace{10mm}
+\boldsymbol{b} =
+\begin{bmatrix}
+-1 \\ 0 \\ 0 \\ 1
+\end{bmatrix}
+$$
+where $a_k = -2 + t_k/4$
+```
+
 **Exercise 9.** Setup the linear system $A \boldsymbol{y} = \boldsymbol{b}$ corresponding to the finite difference method applied to the equation
 
 $$
@@ -463,6 +561,31 @@ y'' + y' = t^2 \ \ , \ \ y(-1) = y(1) = 0
 $$
 
 using 9 equally spaced points on the domain $[-1,1]$.
+
+```{dropdown} Solution
+$$
+A =
+\left[ \begin{array}{rrcrr}
+-2 & 7/8 & 0 & 0 & 0 & 0 & 0 \\
+9/8 & -2 & 7/8 & 0 & 0 & 0 & 0 \\
+0 & 9/8 & -2 & 7/8 & 0 & 0 & 0 \\
+0 & 0 & 9/8 & -2 & 7/8 & 0 & 0 \\
+0 & 0 & 0 & 9/8 & -2 & 7/8 & 0 \\
+0 & 0 & 0 & 0 & 9/8 & -2 & 7/8 \\
+0 & 0 & 0 & 0 & 0 & 9/8 & -2 \\
+\end{array} \right]
+\hspace{10mm}
+\boldsymbol{y} =
+\begin{bmatrix}
+y_1 \\ y_2 \\ y_3 \\ y_4 \\ y_5 \\ y_6 \\ y_7
+\end{bmatrix}
+\hspace{10mm}
+\boldsymbol{b} =
+\begin{bmatrix}
+9/16 \\ 1/4 \\ 1/16 \\ 0 \\ 1/16 \\ 1/4 \\ 9/16
+\end{bmatrix}
+$$
+```
 
 **Exercise 10.** Setup the linear system $A\boldsymbol{y} = \boldsymbol{b}$ corresponding to the finite difference method applied to the equation
 
@@ -472,6 +595,31 @@ $$
 
 using 9 equally spaced points on the domain $[0,2\pi]$.
 
+```{dropdown} Solution
+$$
+A =
+\left[ \begin{array}{rrcrr}
+a_1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+1 & a_2 & 1 & 0 & 0 & 0 & 0 \\
+0 & 1 & a_3 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & a_4 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & a_5 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 & a_6 & 1 \\
+0 & 0 & 0 & 0 & 0 & 1 & a_7 \\
+\end{array} \right]
+\hspace{10mm}
+\boldsymbol{y} =
+\begin{bmatrix}
+y_1 \\ y_2 \\ y_3 \\ y_4 \\ y_5 \\ y_6 \\ y_7
+\end{bmatrix}
+\hspace{10mm}
+\boldsymbol{b} =
+\begin{bmatrix}
+\frac{\pi^2\sqrt{2}}{32} \\ \frac{pi^2}{16} \\ \frac{\pi^2\sqrt{2}}{32} \\ 0 \\ -\frac{\pi^2\sqrt{2}}{32} \\ -\frac{pi^2}{16} \\ -\frac{\pi^2\sqrt{2}}{32}
+\end{bmatrix}
+$$
+```
+
 **Exercise 11.** Setup the linear system $A\boldsymbol{y} = \boldsymbol{b}$ corresponding to the finite difference method applied to the equation
 
 $$
@@ -479,3 +627,28 @@ y'' + \sin(t) y = \cos^2(t) \ \ , \ \ y(0) = y(2\pi) = 0
 $$
 
 using 9 equally spaced points on the domain $[0,2\pi]$.
+
+```{dropdown} Solution
+$$
+A =
+\left[ \begin{array}{rrcrr}
+a_1 & 1 & 0 & 0 & 0 & 0 & 0 \\
+1 & a_2 & 1 & 0 & 0 & 0 & 0 \\
+0 & 1 & a_3 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & a_4 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & a_5 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 & a_6 & 1 \\
+0 & 0 & 0 & 0 & 0 & 1 & a_7 \\
+\end{array} \right]
+\hspace{10mm}
+\boldsymbol{y} =
+\begin{bmatrix}
+y_1 \\ y_2 \\ y_3 \\ y_4 \\ y_5 \\ y_6 \\ y_7
+\end{bmatrix}
+\hspace{10mm}
+\boldsymbol{b} =
+\begin{bmatrix}
+\frac{\pi^2}{32} \\ 0 \\ \frac{\pi^2}{32} \\ \frac{\pi^2}{16} \\ \frac{\pi^2}{32} \\ 0 \\ \frac{\pi^2}{32}
+\end{bmatrix}
+$$
+```

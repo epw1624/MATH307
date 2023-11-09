@@ -131,7 +131,7 @@ and so $\lambda = 3$ has geometric multiplicity 1. Therefore $A$ does not have e
 ```
 
 ```{div} theorem
-A matrix $A$ is diagonalizable if and only if, for all eiganvalues $\lambda$, the algebraic multiplicity of $\lambda$ equals the geometric multiplicity of $\lambda$.
+A matrix $A$ is diagonalizable if and only if, for all eigenvalues $\lambda$, the algebraic multiplicity of $\lambda$ equals the geometric multiplicity of $\lambda$.
 ```
 
 ## Spectral Theorem

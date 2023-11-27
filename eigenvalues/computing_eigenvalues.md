@@ -315,7 +315,7 @@ The teleportation parameter $\alpha$ is usually chosen to be $\alpha = 0.85$.
 ```
 
 ```{div} theorem
-Let $G$ be a directed graph and let $P$ be the stochastic matrix for $G$. Choose parameters $0 < \alpha < 0$ and $\boldsymbol{v}$. There exists a unique steady state vector $\boldsymbol{x}$ (with entries between 0 and 1 and the entries sum to 1) such that
+Let $G$ be a directed graph and let $P$ be the stochastic matrix for $G$. Choose parameters $0 < \alpha < 1$ and $\boldsymbol{v}$. There exists a unique steady state vector $\boldsymbol{x}$ (with entries between 0 and 1 and the entries sum to 1) such that
 
 $$
 \left( \alpha P + (1 - \alpha) \boldsymbol{v} \boldsymbol{e}^T \right) \boldsymbol{x} = \boldsymbol{x}
